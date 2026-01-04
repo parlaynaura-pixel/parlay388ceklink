@@ -1,5 +1,3 @@
-# spinpintarbola
-spinpintarbola
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -31,14 +29,15 @@ spinpintarbola
         }
 
         body {
-            background: linear-gradient(
-			135deg, 
-			#0f0f1e 0%, 
-			#1a0f2e 50%, 
-			#0f1f2e 100%);
-            color: #ccebff;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            overflow-x: hidden;
+    background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizx7b230N7SjQzn9CoZwrrx0s4qqZ92qA-x_DjfC1D4Mzv_tFk1ilBqyR-wshW9Sg0eHgkufPzLRn4YblA-UjtzjvEeRUC8BL7AlYH41st66FzKKKG-zOIhB0SqOVtBaT5mx0b5tkkaoONBSGrP8YNW3S3uv0j7LSzvPLykwP9rAFtPdzZ8SXNbn6z8_E/w420-h420/photo_2025-09-26_08-45-59.jpg"); 
+    background-size: cover;          
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;    
+    
+    color: #ccebff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
         }
 
         .container {
@@ -757,7 +756,7 @@ spinpintarbola
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
     <script>
-        const PRIZES = ["25K", "50K", "75K", "100K", "150K", "2 Juta"];
+        const PRIZES = ["25K", "50K", "75K", "100K", "150K", "200K"];
         const PRIZE_AMOUNTS = ["25.000", "50.000", "75.000", "100.000", "150.000", "2.000.000"];
         
         let hasSpun = localStorage.getItem("hasSpun") === "true";
