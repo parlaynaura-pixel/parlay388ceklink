@@ -722,7 +722,7 @@
             </div>
 			<div class="christmas-garland"></div>
             <h1>SELAMAT DATANG DI <span class="highlight">PINTARBOLA</span></h1>
-            <p class="subtitle">PUTAR RODANYA & DAPATKAN HADIAH FANTASTIS HINGGA 200 RIBU RUPIAH!</p>
+            <p class="subtitle">PUTAR RODANYA & DAPATKAN HADIAH FANTASTIS HINGGA 2 JUTA RUPIAH!</p>
         </header>
 
         <div class="main-content">
