@@ -1,63 +1,20 @@
-  resize();
-  window.addEventListener("resize", resize);
-
-  const flakes = Array.from({ length: 120 }, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 3 + 1,
-    d: Math.random() * 1.5 + 0.5
-  }));
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "rgba(255,255,255,0.9)";
-    ctx.beginPath();
-
-    flakes.forEach(f => {
-      ctx.moveTo(f.x, f.y);
-      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
-    });
-
-    ctx.fill();
-    move();
-    requestAnimationFrame(draw);
-  }
-
-  function move() {
-    flakes.forEach(f => {
-      f.y += f.d;
-      if (f.y > canvas.height) {
-        f.y = -5;
-        f.x = Math.random() * canvas.width;
-      }
-    });
-  }
-
-  draw();
-});
-
-
-
-		
-    </script>
-	<canvas id="snow"></canvas><!DOCTYPE html>
-<html lang="id">
-<head>
+<!DOCTYPE html>
+<html lang="id"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:url" content="" />
-    <meta property="og:title" content="PINTARBOLA - Spin & Win" />
-    <meta property="og:description" content="Putar roda keberuntungan dan menangkan hadiah hingga 200 ribu! Gratis dan mudah." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://img.hiicord.com/gambar/GAPURABOLA.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@replit" />
-    <meta name="twitter:title" content="PINTARBOLA - Spin & Win" />
-    <meta name="twitter:description" content="Putar roda keberuntungan dan menangkan hadiah hingga 200 ribu! Gratis dan mudah." />
-    <meta name="twitter:image" content="https://img.hiicord.com/gambar/GAPURABOLA.jpg" />
-    <title>PINTARBOLA - Spin & Win Lucky Wheel</title>
+    <meta property="og:url" content="">
+    <meta property="og:title" content="PINTARBOLA - Spin &amp; Win">
+    <meta property="og:description" content="Putar roda keberuntungan dan menangkan hadiah hingga 200 ribu! Gratis dan mudah.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://img.hiicord.com/gambar/GAPURABOLA.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@replit">
+    <meta name="twitter:title" content="PINTARBOLA - Spin &amp; Win">
+    <meta name="twitter:description" content="Putar roda keberuntungan dan menangkan hadiah hingga 200 ribu! Gratis dan mudah.">
+    <meta name="twitter:image" content="https://img.hiicord.com/gambar/GAPURABOLA.jpg">
+    <title>PINTARBOLA - Spin &amp; Win Lucky Wheel</title>
     <style>
         * {
             margin: 0;
@@ -71,11 +28,7 @@
         }
 
         body {
-            background: linear-gradient(
-			135deg, 
-			#0f0f1e 0%, 
-			#1a0f2e 50%, 
-			#0f1f2e 100%);
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a0f2e 50%, #0f1f2e 100%);
             color: #ccebff;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             overflow-x: hidden;
@@ -142,25 +95,9 @@
         }
 
         h1 .highlight {
-            color: #FFD700;
+            color: #ffbf00;
             animation: pulse 2s infinite;
-			text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
-
         }
-		
-				/* Garland Natal di header */
-		.christmas-garland {
-		  height: 28px;
-		  background: repeating-linear-gradient(
-			90deg,
-			#d32f2f 0 20px,
-			#ffffff 20px 40px,
-			#1b5e20 40px 60px
-		  );
-		  border-radius: 0 0 20px 20px;
-		  opacity: 0.85;
-		  margin-bottom: 20px;
-		}
 
         @keyframes fadeIn {
             from {
@@ -243,11 +180,8 @@
             border-radius: 50%;
             padding: 15px;
             background: linear-gradient(to bottom, #D4A500, #996600);
-            box-shadow:
-				0 0 20px rgba(255, 215, 0, 0.6),
-				0 0 20px rgba(211, 47, 47, 0.5),
-				inset 0 0 15px rgba(27, 94, 32, 0.4);
-            border: 2px solid #664400;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,0.3);
+            border: 4px solid #664400;
             position: relative;
         }
 
@@ -371,12 +305,12 @@
             font-size: 24px;
             font-weight: 900;
             letter-spacing: 2px;
-            background: linear-gradient(to bottom, #c62828, #8e0000);
-            color: #ffffff;
-            border: 5px solid #ffffff;
+            background: linear-gradient(to bottom, #FFD700, #CCAA00);
+            color: #000000;
+            border: 4px solid #997700;
             border-radius: 10px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
             font-family: inherit;
         }
@@ -384,7 +318,7 @@
         button:hover:not(:disabled) {
             transform: scale(1.02);
             box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
-            background: linear-gradient(to bottom, #FFED4E, #c62828);
+            background: linear-gradient(to bottom, #FFED4E, #FFD700);
         }
 
         button:active:not(:disabled) {
@@ -440,7 +374,7 @@
         .winners-header {
             background: linear-gradient(to right, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.05));
             padding: 15px 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 215, 255, 0.1);
             font-weight: bold;
             font-size: 1.1rem;
         }
@@ -587,9 +521,6 @@
             color: #FFD700;
             margin: 30px 0;
             animation: bounce 0.6s ease-in-out infinite;
-			text-shadow:
-			0 0 10px rgba(255,215,0,0.8),
-			0 0 20px rgba(211,47,47,0.6);
         }
 
         @keyframes bounce {
@@ -603,9 +534,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-		.modal-content h1::after {
-		content: " 🎄";
-		}
 
         .floating-chat {
             position: fixed;
@@ -695,24 +623,12 @@
                 opacity: 0;
             }
         }
-		
-		#snow {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			pointer-events: none;
-			z-index: 9999;
-		}
-
-
     </style>
 </head>
 <body>
     <button class="mute-button" id="muteBtn" title="Toggle Sound">
         <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.26 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.26 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"></path>
         </svg>
     </button>
 
@@ -720,9 +636,8 @@
         <header>
             <div class="">
             </div>
-			<div class="christmas-garland"></div>
             <h1>SELAMAT DATANG DI <span class="highlight">PINTARBOLA</span></h1>
-            <p class="subtitle">PUTAR RODANYA & DAPATKAN HADIAH FANTASTIS HINGGA 2 JUTA RUPIAH!</p>
+            <p class="subtitle">PUTAR RODANYA &amp; DAPATKAN HADIAH FANTASTIS HINGGA 2 JUTA RUPIAH!</p>
         </header>
 
         <div class="main-content">
@@ -730,15 +645,15 @@
                 <div class="wheel-wrapper">
                     <div class="pointer">
                         <svg viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 60L4 20C4 20 8 4 24 4C40 4 44 20 44 20L24 60Z" fill="#FFD700" stroke="#B8860B" stroke-width="2"/>
-                            <circle cx="24" cy="16" r="8" fill="#FFF" stroke="#B8860B" stroke-width="2"/>
+                            <path d="M24 60L4 20C4 20 8 4 24 4C40 4 44 20 44 20L24 60Z" fill="#FFD700" stroke="#B8860B" stroke-width="2"></path>
+                            <circle cx="24" cy="16" r="8" fill="#FFF" stroke="#B8860B" stroke-width="2"></circle>
                         </svg>
                     </div>
                     <div class="wheel-outer">
                         <div class="wheel-inner" id="wheel">
                             <div class="wheel-center"></div>
                             <!-- Prize texts will be generated by JavaScript -->
-                        </div>
+                        <div class="prize-text" style="color: rgb(255, 255, 255); text-shadow: rgba(0, 0, 0, 0.5) 0px 2px 4px; left: calc(50% + 30px); top: calc(50% - 106.603px);">2JT</div><div class="prize-text" style="color: rgb(0, 0, 0); text-shadow: none; left: calc(50% + 80px); top: calc(50% - 20px);">500K</div><div class="prize-text" style="color: rgb(255, 255, 255); text-shadow: rgba(0, 0, 0, 0.5) 0px 2px 4px; left: calc(50% + 30px); top: calc(50% + 66.6025px);">750K</div><div class="prize-text" style="color: rgb(0, 0, 0); text-shadow: none; left: calc(50% - 70px); top: calc(50% + 66.6025px);">1JT</div><div class="prize-text" style="color: rgb(255, 255, 255); text-shadow: rgba(0, 0, 0, 0.5) 0px 2px 4px; left: calc(50% - 120px); top: calc(50% - 20px);">1,5JT</div><div class="prize-text" style="color: rgb(0, 0, 0); text-shadow: none; left: calc(50% - 70px); top: calc(50% - 106.603px);">250K</div></div>
                     </div>
                 </div>
             </div>
@@ -747,26 +662,223 @@
                 <div class="input-section">
                     <h2>MASUKAN USER ID</h2>
                     <p>Masukan User ID anda untuk memutar roda keberuntungan!</p>
-                    <input type="text" id="userIdInput" placeholder="Contoh: USER123" maxlength="20" />
-                    <button id="spinBtn" onclick="startSpin()">SPIN SEKARANG!</button>
+                    <input type="text" id="userIdInput" placeholder="Contoh: USER123" maxlength="20" disabled="">
+                    <button id="spinBtn" onclick="startSpin()" disabled="">SUDAH SPIN</button>
                     <div class="jackpot-display">
                         <div class="jackpot-label">Total Jackpot</div>
-                        <div class="jackpot-amount" id="jackpot">IDR 888.888.888</div>
+                        <div class="jackpot-amount" id="jackpot">IDR 888.970.445</div>
                     </div>
                 </div>
-                <div id="spunMessage" class="spun-message" style="display: none;">
+                <div id="spunMessage" class="spun-message" style="display: block;">
                     Kesempatan spin anda sudah habis. Silahkan klaim hadiah anda.
                 </div>
                 <div class="winners-section">
                     <div class="winners-header">🏆 50 Daftar Riwayat Spin Terakhir</div>
-                    <div class="winners-table" id="winnersTable">
-                        <div class="winners-table-header">
+                    <div class="winners-table" id="winnersTable"><div class="winners-table-header">
                             <div>NO</div>
                             <div>USER ID</div>
                             <div>HADIAH</div>
-                        </div>
-                        <!-- Rows will be generated by JavaScript -->
-                    </div>
+                        </div><div class="winners-table-row">
+                    <div class="winner-no">1</div>
+                    <div class="winner-id">USER8142***</div>
+                    <div class="winner-prize">IDR 2.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">2</div>
+                    <div class="winner-id">USER6316***</div>
+                    <div class="winner-prize">IDR 1.500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">3</div>
+                    <div class="winner-id">USER5969***</div>
+                    <div class="winner-prize">IDR 500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">4</div>
+                    <div class="winner-id">USER1351***</div>
+                    <div class="winner-prize">IDR 1.500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">5</div>
+                    <div class="winner-id">USER1954***</div>
+                    <div class="winner-prize">IDR 1.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">6</div>
+                    <div class="winner-id">USER9006***</div>
+                    <div class="winner-prize">IDR 1.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">7</div>
+                    <div class="winner-id">USER6506***</div>
+                    <div class="winner-prize">IDR 500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">8</div>
+                    <div class="winner-id">USER4434***</div>
+                    <div class="winner-prize">IDR 1.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">9</div>
+                    <div class="winner-id">USER5507***</div>
+                    <div class="winner-prize">IDR 250.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">10</div>
+                    <div class="winner-id">USER8368***</div>
+                    <div class="winner-prize">IDR 2.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">11</div>
+                    <div class="winner-id">USER3420***</div>
+                    <div class="winner-prize">IDR 500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">12</div>
+                    <div class="winner-id">USER6705***</div>
+                    <div class="winner-prize">IDR 250.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">13</div>
+                    <div class="winner-id">USER9094***</div>
+                    <div class="winner-prize">IDR 250.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">14</div>
+                    <div class="winner-id">USER5126***</div>
+                    <div class="winner-prize">IDR 2.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">15</div>
+                    <div class="winner-id">USER8766***</div>
+                    <div class="winner-prize">IDR 500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">16</div>
+                    <div class="winner-id">USER8771***</div>
+                    <div class="winner-prize">IDR 1.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">17</div>
+                    <div class="winner-id">USER9544***</div>
+                    <div class="winner-prize">IDR 1.500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">18</div>
+                    <div class="winner-id">USER4399***</div>
+                    <div class="winner-prize">IDR 2.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">19</div>
+                    <div class="winner-id">USER6190***</div>
+                    <div class="winner-prize">IDR 1.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">20</div>
+                    <div class="winner-id">USER3654***</div>
+                    <div class="winner-prize">IDR 1.500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">21</div>
+                    <div class="winner-id">USER9129***</div>
+                    <div class="winner-prize">IDR 750.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">22</div>
+                    <div class="winner-id">USER8663***</div>
+                    <div class="winner-prize">IDR 1.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">23</div>
+                    <div class="winner-id">USER3624***</div>
+                    <div class="winner-prize">IDR 2.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">24</div>
+                    <div class="winner-id">USER3620***</div>
+                    <div class="winner-prize">IDR 250.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">25</div>
+                    <div class="winner-id">USER7567***</div>
+                    <div class="winner-prize">IDR 2.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">26</div>
+                    <div class="winner-id">USER1789***</div>
+                    <div class="winner-prize">IDR 2.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">27</div>
+                    <div class="winner-id">USER2811***</div>
+                    <div class="winner-prize">IDR 750.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">28</div>
+                    <div class="winner-id">USER5580***</div>
+                    <div class="winner-prize">IDR 1.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">29</div>
+                    <div class="winner-id">USER6794***</div>
+                    <div class="winner-prize">IDR 1.500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">30</div>
+                    <div class="winner-id">USER6910***</div>
+                    <div class="winner-prize">IDR 2.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">31</div>
+                    <div class="winner-id">USER6940***</div>
+                    <div class="winner-prize">IDR 250.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">32</div>
+                    <div class="winner-id">USER4390***</div>
+                    <div class="winner-prize">IDR 750.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">33</div>
+                    <div class="winner-id">USER2151***</div>
+                    <div class="winner-prize">IDR 250.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">34</div>
+                    <div class="winner-id">USER5006***</div>
+                    <div class="winner-prize">IDR 500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">35</div>
+                    <div class="winner-id">USER1608***</div>
+                    <div class="winner-prize">IDR 500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">36</div>
+                    <div class="winner-id">USER9378***</div>
+                    <div class="winner-prize">IDR 250.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">37</div>
+                    <div class="winner-id">USER2817***</div>
+                    <div class="winner-prize">IDR 500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">38</div>
+                    <div class="winner-id">USER4595***</div>
+                    <div class="winner-prize">IDR 500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">39</div>
+                    <div class="winner-id">USER5939***</div>
+                    <div class="winner-prize">IDR 250.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">40</div>
+                    <div class="winner-id">USER1541***</div>
+                    <div class="winner-prize">IDR 2.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">41</div>
+                    <div class="winner-id">USER1506***</div>
+                    <div class="winner-prize">IDR 250.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">42</div>
+                    <div class="winner-id">USER3148***</div>
+                    <div class="winner-prize">IDR 500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">43</div>
+                    <div class="winner-id">USER9938***</div>
+                    <div class="winner-prize">IDR 1.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">44</div>
+                    <div class="winner-id">USER2537***</div>
+                    <div class="winner-prize">IDR 1.500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">45</div>
+                    <div class="winner-id">USER6399***</div>
+                    <div class="winner-prize">IDR 1.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">46</div>
+                    <div class="winner-id">USER9930***</div>
+                    <div class="winner-prize">IDR 2.000.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">47</div>
+                    <div class="winner-id">USER4333***</div>
+                    <div class="winner-prize">IDR 1.500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">48</div>
+                    <div class="winner-id">USER1552***</div>
+                    <div class="winner-prize">IDR 500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">49</div>
+                    <div class="winner-id">USER8306***</div>
+                    <div class="winner-prize">IDR 500.000</div>
+                </div><div class="winners-table-row">
+                    <div class="winner-no">50</div>
+                    <div class="winner-id">USER4114***</div>
+                    <div class="winner-prize">IDR 250.000</div>
+                </div></div>
                 </div>
             </div>
         </div>
@@ -786,19 +898,19 @@
         <div class="pulse-ring"></div>
         <a href="https://pintarslaw.com/" target="_blank" rel="noopener noreferrer" class="chat-button" title="Chat CS 24/7">
             <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"></path>
             </svg>
         </a>
     </div>
 
-    <audio id="bgMusic" loop></audio>
-    <audio id="spinSound"></audio>
-    <audio id="winSound"></audio>
+    <audio id="bgMusic" loop="" src="https://cdn.pixabay.com/download/audio/2022/03/24/audio_197846c632.mp3?filename=casino-music-1-2518.mp3"></audio>
+    <audio id="spinSound" src="https://assets.mixkit.co/active_storage/sfx/2003/2003-preview.mp3"></audio>
+    <audio id="winSound" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3"></audio>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
     <script>
-        const PRIZES = ["25K", "50K", "75K", "100K", "150K", "200K"];
-        const PRIZE_AMOUNTS = ["25.000", "50.000", "75.000", "100.000", "150.000", "200.000"];
+        const PRIZES = ["2JT", "500K", "750K", "1JT", "1,5JT", "250K"];
+        const PRIZE_AMOUNTS = ["2.000.000", "500.000", "750.000", "1.000.000", "1.500.000", "250.000"];
         
         let hasSpun = localStorage.getItem("hasSpun") === "true";
         let isSpin = false;
@@ -930,7 +1042,7 @@
                 spinSound.play().catch(e => console.log('Audio play failed'));
             }
             
-            // Random antara 100, 150, 200 (index 3, 4, 5)
+            // Random antara 100K, 150K, 200K (index 3, 4, 5)
             const highPrizes = [3, 4, 5];
             const prizeIndex = highPrizes[Math.floor(Math.random() * highPrizes.length)];
             const selectedPrize = PRIZES[prizeIndex];
@@ -1063,58 +1175,8 @@
                 document.getElementById('prizeModal').classList.remove('show');
             }
         });
-		
-document.addEventListener("DOMContentLoaded", () => {
-  const canvas = document.getElementById("snow");
-  const ctx = canvas.getContext("2d");
-
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-
-  resize();
-  window.addEventListener("resize", resize);
-
-  const flakes = Array.from({ length: 120 }, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 3 + 1,
-    d: Math.random() * 1.5 + 0.5
-  }));
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "rgba(255,255,255,0.9)";
-    ctx.beginPath();
-
-    flakes.forEach(f => {
-      ctx.moveTo(f.x, f.y);
-      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
-    });
-
-    ctx.fill();
-    move();
-    requestAnimationFrame(draw);
-  }
-
-  function move() {
-    flakes.forEach(f => {
-      f.y += f.d;
-      if (f.y > canvas.height) {
-        f.y = -5;
-        f.x = Math.random() * canvas.width;
-      }
-    });
-  }
-
-  draw();
-});
-
-
-
-		
     </script>
-	<canvas id="snow"></canvas>
-</body>
-</html>
+
+
+
+</body></html>
