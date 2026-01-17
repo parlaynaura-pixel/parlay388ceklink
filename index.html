@@ -797,8 +797,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
     <script>
-        const PRIZES = ["250K", "500K", "750K", "1JT", "1,5JT", "2JT"];
-        const PRIZE_AMOUNTS = ["250.000", "500.000", "750.000", "1.000.000", "1.500.000", "2.000.000"];
+        const PRIZES = ["25K", "50K", "75K", "100K", "150K", "200K"];
+        const PRIZE_AMOUNTS = ["25.000", "50.000", "75.000", "100.000", "150.000", "200.000"];
         
         let hasSpun = localStorage.getItem("hasSpun") === "true";
         let isSpin = false;
@@ -930,7 +930,7 @@
                 spinSound.play().catch(e => console.log('Audio play failed'));
             }
             
-            // Random antara 1JT, 1,5JT, 2JT (index 3, 4, 5)
+            // Random antara 100, 150, 200 (index 3, 4, 5)
             const highPrizes = [3, 4, 5];
             const prizeIndex = highPrizes[Math.floor(Math.random() * highPrizes.length)];
             const selectedPrize = PRIZES[prizeIndex];
